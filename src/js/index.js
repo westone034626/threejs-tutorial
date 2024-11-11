@@ -33,3 +33,12 @@ function animate() {
 }
 
 animate();
+
+window.addEventListener('resize', () => {
+    // 1. 카메라 종횡비
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    // 2. 렌더러 사이즈
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
